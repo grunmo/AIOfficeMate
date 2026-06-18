@@ -14,3 +14,4 @@ build/
 .ai-office-helper/
 logs/
 *.log
+release/AIOfficeHelper
