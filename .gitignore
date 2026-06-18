@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+.idea/
+.vscode/
+node_modules/
+dist/
+build/
+*.db
+*.sqlite
+*.sqlite3
+.ai-office-helper/
+logs/
+*.log
+release/AIOfficeHelper
