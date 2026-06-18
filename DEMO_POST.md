@@ -53,31 +53,53 @@
 
 ### ✅ 打包产物已就绪
 
-由于本项目为桌面端应用（单文件可执行程序），适合下载后在本地运行体验：
+由于本项目为桌面端应用（单文件可执行程序），适合下载后在本地运行体验。当前 GitHub Release 已提供 **Linux (x86_64)** 版本可直接下载运行。
 
-- **发布包下载**：打包产物位于项目 `release/` 目录，包含：
-  - `AIOfficeHelper`（Linux/macOS 可执行文件）
-  - `AIOfficeHelper.exe`（Windows 可执行文件，需在 Windows 上重新构建）
-  - `index.html` + `assets/`（前端备用静态资源）
-  - `README.md`（使用说明）
+- **Release 下载地址**：https://github.com/grunmo/AIOfficeMate/releases/tag/v1.0.0
+  - `AIOfficeHelper-linux-x86_64`（Linux 可执行文件，119.85 MB，推荐下载）
+  - `build.sh`（Linux/macOS 一键构建脚本）
+  - `build.bat`（Windows 一键构建脚本）
+  - `INSTALL_GUIDE.md`（安装与使用指南）
+  - `CODE_WIKI.md`（完整技术文档）
+  - `DEMO_POST.md`（发帖模板）
 
-**快速运行（Linux/macOS）：**
+**快速运行（Linux，推荐先体验）：**
 
 ```bash
-cd release
-chmod +x AIOfficeHelper
-./AIOfficeHelper
+# 1. 下载 Release 中的可执行文件
+wget https://github.com/grunmo/AIOfficeMate/releases/download/v1.0.0/AIOfficeHelper-linux-x86_64
+
+# 2. 添加可执行权限并运行
+chmod +x AIOfficeHelper-linux-x86_64
+./AIOfficeHelper-linux-x86_64
 # → 自动打开浏览器访问 http://127.0.0.1:9123/
 ```
 
 **快速运行（Windows）：**
-双击 `AIOfficeHelper.exe`，程序自动在浏览器打开 http://127.0.0.1:9123/
+当前 Release 提供的是 Linux 版本（**PyInstaller 不支持跨平台打包**，Linux 环境无法直接生成 Windows `.exe`）。请在 Windows 电脑上执行以下操作：
 
-> 💡 **重要提示**：当前仓库中的 `release/AIOfficeHelper` 是在 Linux 环境下构建的。
-> 如需 Windows `.exe` 文件，请在 Windows 电脑上执行 `build.bat` 一键构建（源码见 `build.sh`），约 2~5 分钟完成。
+```bat
+REM 1. clone 仓库或下载源码
+git clone https://github.com/grunmo/AIOfficeMate.git
+cd AIOfficeMate
+
+REM 2. 执行一键构建脚本
+build.bat
+
+REM 3. 运行生成的可执行程序
+release\AIOfficeHelper.exe
+```
+
+**快速运行（macOS）：**
+在 macOS 上执行 `./build.sh` 一键构建即可。
 
 **体验 Mock 模式（无需配置，立即可用）：**
 默认使用内置规则引擎，无需配置 API Key，打开即用。打开「系统设置 → 模型」可切换到 LLM 模式并配置真实模型接口。
+
+> 💡 **关于平台版本的重要提示**：
+> - **Linux (x86_64)**：当前 Release 已提供，可直接下载运行
+> - **Windows**：需在 Windows 电脑上执行 `build.bat` 构建（约 2~5 分钟）
+> - **macOS**：需在 Mac 电脑上执行 `./build.sh` 构建
 
 ### 📁 源码仓库
 
